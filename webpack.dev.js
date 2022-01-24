@@ -8,7 +8,7 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
         onBeforeSetupMiddleware(devServer) {
-            chokidar.watch([path.resolve(__dirname, 'index.html')]).on('all', function () {
+            chokidar.watch([path.resolve(__dirname, 'src/index.html')]).on('all', function () {
                 devServer.sendMessage(devServer.webSocketServer.clients, 'content-changed')
             })
         },
